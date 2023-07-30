@@ -119,7 +119,7 @@ const createRecordRow = (productId, quantity) => {
   });
   decrementBtn.addEventListener("click", () => {
     const qty = parseFloat(recordQty.dataset.value);
-    if (qty > 0) {
+    if (qty > 1) {
       const newQty = qty - 1;
       recordQty.textContent = newQty.toLocaleString();
       recordQty.setAttribute("data-value", newQty);
