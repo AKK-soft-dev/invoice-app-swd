@@ -1,8 +1,8 @@
 {
-  "name": "2-invoice",
+  "name": "invoice-app-swd",
   "version": "1.0.0",
   "description": "",
-  "main": "invoice.js",
+  "main": "/js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
