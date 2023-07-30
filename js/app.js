@@ -23,12 +23,6 @@ const products = [
   },
 ];
 
-// initialize product
-products.forEach((el) => {
-  product.append(new Option(el.name, el.id));
-  inventories.append(createItem(el.name, el.price));
-});
-
 let rowCount = 1;
 
 const app = document.querySelector("#app");
@@ -153,6 +147,12 @@ const calculateTotal = () => {
   recordsTotal.textContent = formattedTotal;
   recordsTotalCost.textContent = formattedTotalCost;
 };
+
+// initialize product
+products.forEach((el) => {
+  product.append(new Option(el.name, el.id));
+  inventories.append(createItem(el.name, el.price));
+});
 
 // process
 
