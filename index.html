@@ -20,7 +20,7 @@
               <div class="bg-secondary-subtle p-3 my-4 d-print-none">
                 <form action="" id="newRecord">
                   <div class="row">
-                    <div class="col">
+                    <div class="col-6 col-md-4">
                       <div class="">
                         <label for="product" class="form-label"
                           >Select Product</label
@@ -33,7 +33,7 @@
                         ></select>
                       </div>
                     </div>
-                    <div class="col">
+                    <div class="col-6 col-md-4">
                       <div class="">
                         <label for="quantity" class="form-label"
                           >Quantity</label
@@ -41,14 +41,14 @@
                         <input
                           type="number"
                           name="quantity"
-                          min="0"
+                          min="1"
                           id="quantity"
                           class="form-control"
                           required
                         />
                       </div>
                     </div>
-                    <div class="col align-self-end">
+                    <div class="align-self-end col-12 col-md-4 mt-2 mt-md-0">
                       <button class="btn btn-primary w-100">Add Record</button>
                     </div>
                   </div>
@@ -79,11 +79,11 @@
                       <td class="text-end records-total">0</td>
                     </tr>
                     <tr>
-                      <td colspan="4" class="text-start">Tax</td>
-                      <td class="text-end records-tax">5%</td>
+                      <td colspan="4" class="text-start">Tax ( 5% )</td>
+                      <td class="text-end records-tax" data-tax="5">0</td>
                     </tr>
                     <tr>
-                      <td colspan="4" class="text-start">Total cost</td>
+                      <td colspan="4" class="text-start">Sub total</td>
                       <td class="text-end records-total-cost">0</td>
                     </tr>
                   </tfoot>
@@ -146,7 +146,7 @@
                 <div class="col">
                   <input
                     type="number"
-                    min="0"
+                    min="1"
                     id="newItemPrice"
                     placeholder="Price"
                     class="form-control"

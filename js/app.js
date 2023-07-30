@@ -139,10 +139,12 @@ const calculateTotal = () => {
   const formattedTotal = total.toLocaleString();
 
   let totalCost = 0;
+  let tax = 0;
   if (total > 0) {
-    const tax = total * (parseFloat(recordsTax.textContent) / 100);
+    tax = total * (parseFloat(recordsTax.dataset.tax) / 100);
     totalCost = total + tax;
   }
+  recordsTax.textContent = tax.toLocaleString();
   const formattedTotalCost = totalCost.toLocaleString();
   recordsTotal.textContent = formattedTotal;
   recordsTotalCost.textContent = formattedTotalCost;
@@ -159,11 +161,6 @@ products.forEach((el) => {
 // add record
 newRecord.addEventListener("submit", (e) => {
   e.preventDefault();
-
-  if (quantity.valueAsNumber <= 0) {
-    alert("Quantity must be greater than zero!");
-    return;
-  }
 
   const isExistedRow = document.querySelector(
     `[product-id='${product.value}']`
@@ -199,11 +196,6 @@ newItem.addEventListener("submit", (e) => {
 
   const newProductName = newItemName.value;
   const newProductPrice = newItemPrice.valueAsNumber;
-
-  if (newProductPrice <= 0) {
-    alert("The price must be greater than zero!");
-    return;
-  }
 
   // products array update
   let newItemId = products[products.length - 1].id + 1;
